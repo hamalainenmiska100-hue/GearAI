@@ -3,69 +3,26 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Gear AI</title>
+    <title>Gear AI Chat</title>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@500;600;700&display=swap"
       rel="stylesheet"
     />
     <link rel="stylesheet" href="styles.css" />
   </head>
   <body>
-    <div class="app-shell">
-      <aside class="sidebar">
-        <button class="new-chat-btn" id="newChatBtn">+ New chat</button>
-        <nav aria-label="Recent chats" class="thread-list">
-          <button class="thread active">Product launch brief</button>
-          <button class="thread">Roadmap planning notes</button>
-          <button class="thread">Pricing strategy review</button>
-        </nav>
-      </aside>
+    <main class="chat-screen" aria-label="Chat screen">
+      <div class="logo-pill" aria-label="Gear logo">
+        <img src="gear-logo.svg" alt="Gear logo" class="logo" />
+      </div>
 
-      <main class="chat-layout">
-        <header class="topbar">
-          <div class="brand">
-            <img src="gear-logo.svg" alt="Gear logo" class="logo" />
-            <div>
-              <p class="brand-name">Gear</p>
-              <p class="brand-sub">Material 3 chat workspace</p>
-            </div>
-          </div>
-        </header>
-
-        <section class="messages" id="messages" aria-live="polite">
-          <article class="message assistant">
-            <p>
-              Hi! I am Gear. Ask me anything and I will respond with clear,
-              actionable suggestions.
-            </p>
-          </article>
-          <article class="message user">
-            <p>Can you help me draft an executive update?</p>
-          </article>
-          <article class="message assistant">
-            <p>
-              Absolutely — share your key metrics and I can produce a concise,
-              leadership-ready summary.
-            </p>
-          </article>
-        </section>
-
-        <section class="composer" aria-label="Message composer">
-          <label for="prompt" class="sr-only">Message Gear</label>
-          <textarea
-            id="prompt"
-            rows="1"
-            placeholder="Message Gear..."
-          ></textarea>
-          <div class="composer-actions">
-            <button class="text-btn" id="clearBtn">Clear</button>
-            <button class="send-btn" id="sendBtn">Send</button>
-          </div>
-        </section>
-      </main>
-    </div>
+      <form class="composer" aria-label="Message composer">
+        <label for="prompt" class="sr-only">Input text to send</label>
+        <input id="prompt" type="text" placeholder="input text to send" />
+      </form>
+    </main>
 
     <script src="app.js"></script>
   </body>
