@@ -1,0 +1,10 @@
+{
+  "name": "Gear AI Chat",
+  "short_name": "GearAI",
+  "start_url": ".",
+  "display": "standalone",
+  "background_color": "#000000",
+  "theme_color": "#000000",
+  "description": "Minimal Gear AI chat",
+  "orientation": "portrait-primary"
+}
