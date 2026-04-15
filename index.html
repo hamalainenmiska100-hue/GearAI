@@ -6,60 +6,66 @@
     <title>Gear AI</title>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
     <link rel="stylesheet" href="styles.css" />
   </head>
   <body>
-    <div class="bg-orb orb-1"></div>
-    <div class="bg-orb orb-2"></div>
-    <main class="app-shell">
-      <header class="topbar glass">
-        <div class="brand">
-          <img src="gear-logo.svg" alt="Gear logo" class="logo" />
-          <div>
-            <p class="brand-name">Gear</p>
-            <p class="brand-sub">Adaptive AI Workspace</p>
+    <div class="app-shell">
+      <aside class="sidebar">
+        <button class="new-chat-btn" id="newChatBtn">+ New chat</button>
+        <nav aria-label="Recent chats" class="thread-list">
+          <button class="thread active">Product launch brief</button>
+          <button class="thread">Roadmap planning notes</button>
+          <button class="thread">Pricing strategy review</button>
+        </nav>
+      </aside>
+
+      <main class="chat-layout">
+        <header class="topbar">
+          <div class="brand">
+            <img src="gear-logo.svg" alt="Gear logo" class="logo" />
+            <div>
+              <p class="brand-name">Gear</p>
+              <p class="brand-sub">Material 3 chat workspace</p>
+            </div>
           </div>
-        </div>
-        <button class="ghost-btn">Try Demo</button>
-      </header>
+        </header>
 
-      <section class="hero glass">
-        <p class="eyebrow">Next-gen AI assistant</p>
-        <h1>Build, think, and ship faster with <span>Gear</span>.</h1>
-        <p class="lead">
-          Gear is your intelligent copilot for research, ideation, coding, and decision-making—designed with a modern, low-friction interface.
-        </p>
-        <div class="prompt-wrap">
-          <label for="prompt" class="sr-only">Ask Gear anything</label>
-          <textarea id="prompt" placeholder="Ask Gear to brainstorm product ideas, draft copy, or summarize your roadmap..."></textarea>
-          <div class="prompt-actions">
-            <button class="ghost-btn" id="clearBtn">Clear</button>
-            <button class="primary-btn" id="sendBtn">Ask Gear</button>
+        <section class="messages" id="messages" aria-live="polite">
+          <article class="message assistant">
+            <p>
+              Hi! I am Gear. Ask me anything and I will respond with clear,
+              actionable suggestions.
+            </p>
+          </article>
+          <article class="message user">
+            <p>Can you help me draft an executive update?</p>
+          </article>
+          <article class="message assistant">
+            <p>
+              Absolutely — share your key metrics and I can produce a concise,
+              leadership-ready summary.
+            </p>
+          </article>
+        </section>
+
+        <section class="composer" aria-label="Message composer">
+          <label for="prompt" class="sr-only">Message Gear</label>
+          <textarea
+            id="prompt"
+            rows="1"
+            placeholder="Message Gear..."
+          ></textarea>
+          <div class="composer-actions">
+            <button class="text-btn" id="clearBtn">Clear</button>
+            <button class="send-btn" id="sendBtn">Send</button>
           </div>
-        </div>
-      </section>
-
-      <section class="cards">
-        <article class="card glass">
-          <h2>Context-aware</h2>
-          <p>Remembers the thread and adapts outputs with concise, actionable reasoning.</p>
-        </article>
-        <article class="card glass">
-          <h2>Multimodal-ready</h2>
-          <p>Designed for text, files, and visual workflows in one unified AI environment.</p>
-        </article>
-        <article class="card glass">
-          <h2>Built for teams</h2>
-          <p>Share prompts, reusable templates, and outcomes across your organization.</p>
-        </article>
-      </section>
-
-      <section class="response glass" id="responsePanel">
-        <h2>Gear Output</h2>
-        <p id="responseText">Your AI response will appear here.</p>
-      </section>
-    </main>
+        </section>
+      </main>
+    </div>
 
     <script src="app.js"></script>
   </body>
